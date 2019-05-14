@@ -1,0 +1,157 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 96px;
+}
+
+.user-input {
+  min-height: 100vh;
+  padding-bottom: 196px;
+}
+
+.results {
+  margin-top: -180px;
+}
+
+label {
+  display: block;
+  max-width: 200px;
+  text-align: left;
+  min-height: 48px;
+  line-height: 1.42em;
+  position: relative;
+  font-size: 0.825em;
+  margin: 8px auto 0;
+}
+
+label input:nth-child(1) {
+  width: 180px;
+  display: block;
+}
+
+input {
+  font-size: 1em;
+  height: 32px;
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+input[type="color"] {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  margin: 4px 8px;
+  background: none;
+  position: absolute;
+  top: 18px;
+  left: 180px;
+}
+
+pre {
+  text-align: left;
+  background: #eee;
+  padding: 16px;
+}
+
+.swatches {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  max-width: 100%;
+}
+
+.swatch {
+  flex: 1;
+  position: relative;
+  transition: transform 0.2s ease-in;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.swatch:hover {
+  z-index: 10;
+  box-shadow: 0 1px 6px 1px rgba(0, 0, 0, 0.64);
+  transform: scale(1.1);
+}
+
+.swatch__label {
+  position: absolute;
+  padding: 4px 8px;
+  font-size: 0.825em;
+  background: rgba(0, 0, 0, 0.87);
+  color: #fff;
+  border-radius: 8px;
+  margin-top: -24px;
+  opacity: 0;
+  transition: transform 0.2s ease, opacity 0.2s ease-in;
+}
+
+.swatch:hover .swatch__label {
+  opacity: 1;
+  transform: translateY(-4px);
+}
+
+.swatch__check {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  font-size: 12px;
+}
+
+.hint {
+  font-size: 0.825em;
+  color: #666;
+  font-style: italic;
+  margin: 8px auto;
+}
+
+@media (min-width: 500px) {
+  .raw-result {
+    position: relative;
+    max-width: 452px;
+    width: 100%;
+    margin: auto;
+  }
+  .wrapper {
+    max-width: 452px;
+    margin: auto;
+  }
+  label {
+    font-size: 1em;
+    max-width: 452px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  label input:nth-child(1) {
+    width: 180px;
+    display: block;
+  }
+  input[type="color"] {
+    right: -10px;
+    top: 0px;
+    height: 40px;
+    left: auto;
+  }
+  .button--copy-raw {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+  }
+}
